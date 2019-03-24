@@ -16,7 +16,14 @@ public class Main {
 
         AppFlow.flow();
 
-        //ejecucionPrograma();
+        
+        /*Atención!! Las películas persisten hasta el fin de cada ejecución a no
+        ser que se almacenen como peliculas alquiladas por un cliente y se
+        guarden en un archivo.*/
+        
+        
+        
+
     }
 
     /*  MÉTODO DEPRECATED - IMPLEMENTADO DINÁMICAMENTE Y EXPANDIDO EN AppFlow.class
