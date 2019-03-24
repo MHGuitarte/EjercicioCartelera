@@ -19,7 +19,9 @@ public class Main {
         //ejecucionPrograma();
     }
 
-    /*public static void ejecucionPrograma() {
+    /*  MÉTODO DEPRECATED - IMPLEMENTADO DINÁMICAMENTE Y EXPANDIDO EN AppFlow.class
+    
+    public static void ejecucionPrograma() {
         //Creamos el TreeSet y añadimos las 5 primeras películas
         TreeSet<CPelicula> listaPeliculas = new TreeSet<CPelicula>();
         try {
