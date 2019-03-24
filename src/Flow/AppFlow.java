@@ -17,9 +17,6 @@ import java.util.Iterator;
 import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
-import java.lang.Object;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -47,16 +44,19 @@ public class AppFlow {
             + "     ·Fecha(Formato: Año,mes,día)\n"
             + "     ·Director\n"
             + "     ·Sinópsis\n"
-            + "     ·Duración(Formato: horas,minutos)";
+            + "     ·Duración(Formato: horas,minutos)\n"
+            + "Pulsa cualquier tecla para volver al menú.";
 
     public static final String AYUDA_CLIENTE = "AYUDA CLIENTE:\n"
             + "Datos a introducir(Seguir orden estricto):\n"
             + "     ·Nombre cliente\n"
             + "     ·Apellidos cliente\n"
-            + "     ·DNI cliente\n";
+            + "     ·DNI cliente\n"
+            + "Pulsa cualquier tecla para volver al menú.";
 
     public static final String GUARDAR_ARCHIVO = "AYUDA PARA GUARDAR ARCHIVO:\n"
-            + "Únicamente deberá indicar el nombre del archivo donde se guardarán las películas.";
+            + "Únicamente deberá indicar el nombre del archivo donde se guardarán las películas.\n"
+            + "Pulsa cualquier tecla para volver al menú";
 
 //Esta variable controlará el flujo dinámico de la aplicación
     private static String orden;
@@ -73,7 +73,7 @@ public class AppFlow {
             System.out.println("\n \n" + MENU_PRINCIPAL);
             orden = leerString();
             switch (orden) {
-
+                //Los distintos casos comprenden las funciones de la aplicación
                 case ("1"): {
                     listaPeliculas.add(registrarPelicula());
                     break;
@@ -248,7 +248,6 @@ public class AppFlow {
         }
     }
 
-//Este método no se va a implementar todavía
     public static void peliculaCliente(ArrayList<CPelicula> peliculas, TreeSet<CPelicula> listaPeliculas) {
         System.out.println("Introduzca el código de la pelicula alquilada");
         int busqueda = leerInt();
