@@ -10,17 +10,20 @@ import java.util.ArrayList;
 public class CCliente implements Serializable {
 
     private String nombre, apellido, dni;
-    private int numCliente;
+    private int numCliente = 0;
     private ArrayList<CPelicula> peliAlquilada;
 
     public CCliente() {
     }
 
+    /*Creamos una serie de constructores con distintas asignaciones de atributos
+    e inicializaciones de variables, con el fin de poder instanciar un objeto de 
+    esta clase de varias maneras distintas.*/
     public CCliente(String nombre, String apellido, String dni, int numCliente, ArrayList<CPelicula> peliAlquilada) {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.numCliente = numCliente;
+        this.numCliente +=1;
         this.peliAlquilada = peliAlquilada;
     }
 
@@ -28,7 +31,22 @@ public class CCliente implements Serializable {
         this.nombre = nombre;
         this.apellido = apellido;
         this.dni = dni;
-        this.numCliente = numCliente;
+        this.numCliente += 1;
+    }
+
+    public CCliente(String nombre, String apellido, String dni) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.numCliente += 1;
+    }
+
+    public CCliente(String nombre, String apellido, String dni, ArrayList<CPelicula> peliAlquilada) {
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.dni = dni;
+        this.peliAlquilada = peliAlquilada;
+        this.numCliente += 1;
     }
 
     public String getNombre() {
@@ -75,7 +93,7 @@ public class CCliente implements Serializable {
     public String toString() {
         String peliculas = "";
         for (int i = 0; i < peliAlquilada.size(); i++) {
-            peliculas += "Peli " + (i+1) +": " + peliAlquilada.get(i).getTitulo() +", ";
+            peliculas += "Peli " + (i + 1) + ": " + peliAlquilada.get(i).getTitulo() + ", ";
         }
         return "nombre: " + nombre + ", apellido: " + apellido + ", dni: " + dni + ", numCliente: " + numCliente + ", Peliculas: " + peliculas;
     }

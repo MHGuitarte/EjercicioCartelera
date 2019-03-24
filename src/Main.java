@@ -1,17 +1,7 @@
 
-import Classes.CCliente;
-import Classes.CPelicula;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileOutputStream;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-import java.util.ArrayList;
-import java.util.GregorianCalendar;
-import java.util.Iterator;
-import java.util.Set;
-import java.util.TreeMap;
-import java.util.TreeSet;
+
+import Flow.AppFlow;
+
 
 /**
  *
@@ -23,6 +13,13 @@ public class Main {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
+
+        AppFlow.flow();
+
+        //ejecucionPrograma();
+    }
+
+    /*public static void ejecucionPrograma() {
         //Creamos el TreeSet y añadimos las 5 primeras películas
         TreeSet<CPelicula> listaPeliculas = new TreeSet<CPelicula>();
         try {
@@ -39,7 +36,7 @@ public class Main {
         //Creamos Iterador para órden alfabético e iteramos por consola los resultados
         Iterator<CPelicula> itPeli = listaPeliculas.iterator();
 
-        System.out.println("ITERATOR ALFABÉTICO \n \n \n");
+        System.out.println("LISTA TÍTULOS ÓRDEN ALFABÉTICO \n \n \n");
 
         while (itPeli.hasNext()) {
             System.out.println("Título película: " + itPeli.next().getTitulo());
@@ -71,9 +68,9 @@ public class Main {
         }
 
 // Creamos tres ArrayList de Peliculas para cada cliente -> Peliculas escogidas de manera estática.
-        ArrayList<CPelicula> lp1 = new ArrayList<CPelicula>();
-        ArrayList<CPelicula> lp2 = new ArrayList<CPelicula>();
-        ArrayList<CPelicula> lp3 = new ArrayList<CPelicula>();
+        ArrayList<CPelicula> lp1 = new ArrayList<>();
+        ArrayList<CPelicula> lp2 = new ArrayList<>();
+        ArrayList<CPelicula> lp3 = new ArrayList<>();
         try {
             lp1.add(new CPelicula(1, "Esta es de Bay", "Explosiones", 5.25f, new GregorianCalendar(2009, 01, 11, 10, 25, 51), "Bay", "Efectos cucos", 2, 20));
             lp1.add(new CPelicula(3, "Esta es de Polanski", "Drama", 6.25f, new GregorianCalendar(1998, 01, 11, 10, 25, 51), "Polanski", "Soy un viejo", 1, 10));
@@ -85,13 +82,13 @@ public class Main {
             lp3.add(new CPelicula(3, "Esta es de Polanski", "Drama", 6.25f, new GregorianCalendar(1998, 01, 11, 10, 25, 51), "Polanski", "Soy un viejo", 1, 10));
             lp3.add(new CPelicula(10, "Esta es de Almodóvar", "Drama", 5.25f, new GregorianCalendar(2009, 01, 11, 10, 25, 51), "Almodóvar", "Mucho grito", 2, 20));
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
         //Creamos 3 clientes y los añadimos a un TreeMap
         CCliente c1 = new CCliente("Pepe", "Perez", "11234", 2, lp1);
         CCliente c2 = new CCliente("Carlos", "Guzmán", "22124", 3, lp2);
         CCliente c3 = new CCliente("Eustiquio", "Martínez", "66124", 4, lp3);
-
+        
         TreeMap<String, CCliente> listaClientes = new TreeMap<>();
         try {
 
@@ -99,7 +96,7 @@ public class Main {
             listaClientes.put(c2.getDni(), c2);
             listaClientes.put(c3.getDni(), c3);
         } catch (Exception e) {
-            e.printStackTrace();
+            e.printStackTrace(System.out);
         }
 
         //Creamos el archivo clientes.dat y guardamos ahí nuestra lista de clientes
@@ -145,6 +142,5 @@ public class Main {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
-
+    }*/
 }

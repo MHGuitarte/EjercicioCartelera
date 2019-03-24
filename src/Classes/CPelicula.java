@@ -9,7 +9,7 @@ import java.util.Objects;
  *
  * @author M.H. Guitarte <guimhur@gmail.com>
  */
-public class CPelicula extends CEspectaculo implements Comparator<CPelicula>, Comparable<CPelicula>, Serializable {
+public class CPelicula extends CEspectaculo implements Comparable<CPelicula>, Serializable {
 
     private String director, sinopsis;
     private int hora, min;
@@ -110,17 +110,6 @@ public class CPelicula extends CEspectaculo implements Comparator<CPelicula>, Co
     public int compareTo(CPelicula o) {
         try {
             return this.titulo.compareTo(o.titulo);
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return 0;
-
-    }
-
-    @Override
-    public int compare(CPelicula o1, CPelicula o2) {
-        try {
-            return o1.getCodigo() - o2.getCodigo();
         } catch (Exception e) {
             e.printStackTrace();
         }
